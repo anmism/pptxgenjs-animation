@@ -22,7 +22,7 @@ import {
 } from "./constants";
 import { AnimationCategory, SlideShape } from "./types";
 import { Button } from "./components/ui/button";
-import JSONImport from "./components/JSONImport";
+// import JSONImport from "./components/JSONImport";
 
 function App() {
   const [shapes, setShapes] = useState<SlideShape[]>([]);
@@ -348,9 +348,9 @@ function App() {
               </div>
             </div>
 
-            <div className="flex-1 flex flex-col h-full min-h-0">
+            {/* <div className="flex-1 flex flex-col h-full min-h-0">
               <JSONImport />
-            </div>
+            </div> */}
 
             {/* Code Preview - Hidden on mobile, visible on lg */}
             <div className="hidden lg:flex flex-col h-full min-h-0 flex-1">
