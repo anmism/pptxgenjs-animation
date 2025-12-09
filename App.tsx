@@ -22,6 +22,7 @@ import {
 } from "./constants";
 import { AnimationCategory, SlideShape } from "./types";
 import { Button } from "./components/ui/button";
+import JSONImport from "./components/JSONImport";
 
 function App() {
   const [shapes, setShapes] = useState<SlideShape[]>([]);
@@ -209,7 +210,7 @@ function App() {
               <Menu className="w-5 h-5" />
             )}
           </button>
-         
+
           <div className="hidden sm:block min-w-0">
             <h1 className="text-base uppercase  md:text-lg font-medium text-slate-900 truncate">
               Pptxgenjs - Animations
@@ -218,9 +219,15 @@ function App() {
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="flex items-center gap-2 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg transition-all" onClick={()=>{
-            window.open("https://www.npmjs.com/package/@bapunhansdah/pptxgenjs", "_blank")
-          }}>
+          <button
+            className="flex items-center gap-2 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg transition-all"
+            onClick={() => {
+              window.open(
+                "https://www.npmjs.com/package/@bapunhansdah/pptxgenjs",
+                "_blank"
+              );
+            }}
+          >
             <Github className="w-5 h-5" />
           </button>
           <button
@@ -339,6 +346,10 @@ function App() {
                   startIdx={startIdx}
                 />
               </div>
+            </div>
+
+            <div className="flex-1 flex flex-col h-full min-h-0">
+              <JSONImport />
             </div>
 
             {/* Code Preview - Hidden on mobile, visible on lg */}
