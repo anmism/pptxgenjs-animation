@@ -9,6 +9,7 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Github,
 } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import CodeViewer from "./components/CodeViewer";
@@ -21,6 +22,7 @@ import {
 } from "./constants";
 import { AnimationCategory, SlideShape } from "./types";
 import { Button } from "./components/ui/button";
+import JSONImport from "./components/JSONImport";
 
 function App() {
   const [shapes, setShapes] = useState<SlideShape[]>([]);
@@ -208,17 +210,26 @@ function App() {
               <Menu className="w-5 h-5" />
             )}
           </button>
-          <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center text-white flex-shrink-0">
-            <Layers className="w-5 h-5 md:w-6 md:h-6" />
-          </div>
+
           <div className="hidden sm:block min-w-0">
-            <h1 className="text-base md:text-lg font-bold text-slate-900 truncate">
-              PPTX Animations
+            <h1 className="text-base uppercase  md:text-lg font-medium text-slate-900 truncate">
+              Pptxgenjs - Animations
             </h1>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
+          <button
+            className="flex items-center gap-2 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg transition-all"
+            onClick={() => {
+              window.open(
+                "https://www.npmjs.com/package/@bapunhansdah/pptxgenjs",
+                "_blank"
+              );
+            }}
+          >
+            <Github className="w-5 h-5" />
+          </button>
           <button
             onClick={handleReset}
             className="hidden sm:flex items-center gap-2 px-3 py-1.5 text-xs md:text-sm font-medium text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-50 rounded-lg transition-all"
@@ -335,6 +346,10 @@ function App() {
                   startIdx={startIdx}
                 />
               </div>
+            </div>
+
+            <div className="flex-1 flex flex-col h-full min-h-0">
+              <JSONImport />
             </div>
 
             {/* Code Preview - Hidden on mobile, visible on lg */}
